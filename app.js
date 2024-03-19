@@ -8,6 +8,11 @@ let API = "https://pokeapi.co/api/v2/pokemon/";
 // function asynchrone pour appeller API et récupérer des donnée
 async function dataPokemon(name) {
     const reponse = await fetch(`${API}${name}`);
+    // POUR AFFICHER UN MESSAGE D'ERREUR QUAND LE POKEMON N'EXISTE PAS 
+    if(!reponse.ok){
+        card.textContent="Le pokemon n'existe pas  ";
+        return;
+    }
     const data = await reponse.json()
     // console.log(data);
     affichage(data);
@@ -34,11 +39,6 @@ function affichage(name) {
     h2.setAttribute("class","name-pokemon");
     card.appendChild(h2);
 
-    // id
-    // let paraId = document.createElement("p");
-    // paraId.innerText = name["id"];
-    // paraId.setAttribute("class","id-pokemon")
-    // card.appendChild(paraId);
 
     // boucle pour récupérer le type 
     for (let i = 0; i< name["types"].length;i++){

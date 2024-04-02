@@ -38,12 +38,10 @@ form{
     border-radius : 30px;
 }
 
-.card-img-pokemon{
-    
+/* pour l'image du pokemon  */
+.card-img-pokemon{ 
     width:7vw;
-    margin:auto;
-   
-    
+    margin:auto;    
 }
 
 
@@ -59,5 +57,14 @@ form{
     margin-left : 40px;
     text-transform: capitalize;
     padding:8px;
+}
+
+/* POUR LE MESSAGE ERREUR  */
+.erreur{
+    background-color: #BFD7E9;
+    /* text-align: center; */
+    font-size:22px;
+    color:red;
+    font-weight: bolder;
 }
 

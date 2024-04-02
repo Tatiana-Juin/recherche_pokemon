@@ -10,8 +10,7 @@ async function dataPokemon(name) {
     const reponse = await fetch(`${API}${name}`);
     // POUR AFFICHER UN MESSAGE D'ERREUR QUAND LE POKEMON N'EXISTE PAS 
     if(!reponse.ok){
-        card.innerHTML=`<p class="erreur">Le pokemon n'existe pas  </p>`;
-    
+        card.innerHTML=`<p class="erreur"> Le nom du pokemon que tu as saisie n'existe pas . Veuillez entrer un nom de pokemon valide pour pouvoir voir ses statistiques. </p>`;
         return;
     }
     const data = await reponse.json()
